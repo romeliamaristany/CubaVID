@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pàgina Principal</title>
+
+
+    {% load static %}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    
+    {% block css %}
+    {% endblock %}
+    <link rel="stylesheet" href="{% static 'app/css/style.css' %}">
+</head>
+<body class="body_princial_page" style="background-color: #b7eeea;">
+   
+
+  <section class="form-principal">
+
+    <!-- Este es mi Nav con mis dropdown -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a href="{% url 'home' %}"><img class="logo" src="{% static 'app/img/Logo.png' %}" alt="logo"></a>
+
+
+        
+          <!--Barra de busqueda-->
+     
+            <div class="container-fluid navbar">
+              <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Buscar paciente" aria-label="Search">
+                <button class="button_search"><img src="{% static 'app/icons/search_green.png' %}" alt=""></button>
+              </form>
+            </div>
+
+
+
+
+        <!--<p class="navbar-brand" style="margin: 10px; border-bottom-color: ;">Menu</p>-->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button> 
+        <div class="collapse navbar-collapse" id="navbarNavDarkDropdown" style="margin-right: 100px;">
+          <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="padding-right: 20px;">
+                Historias Clínicas
+              </a>
+              <ul class="dropdown-menu dropdown-menu-dark" id="trabajos" name="Trabajos">
+                {% if perms.app.add_hc %}
+                <li><a class="dropdown-item" href="{% url 'historia' %}">Crear</a></li>
+                {% endif %}
+                {% if perms.app.view_hc %}
+                <li><a class="dropdown-item" href="{% url 'listaHC' %}">Registro</a></li>
+                {% endif %}
+              </ul>
+            </li>
+          </ul>
+          <ul class="navbar-nav">
+           
+            <li class="nav-item dropdown">
+              {% if perms.app.add_tv %}
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Tarjetas de Vacunación
+                {% endif %}
+              </a>
+              <ul class="dropdown-menu dropdown-menu-dark" >
+                {% if perms.app.add_tv %}
+                <li><a class="dropdown-item" href="{% url 'tarjeta' %}">Crear</a></li>
+                {% endif %}
+                {% if perms.app.view_tv %}
+                <li><a class="dropdown-item" href="{% url 'listaTV' %}">Registro</a></li>
+                {% endif %}
+
+              </ul>
+            </li>
+          </ul>
+         
+        </div>
+      <!-- <div class="account">
+          <button class="account_button">D</button></div>
+      </div> -->
+      
+      
+      {% if user.is_authenticated %}
+      <li style="list-style: none;">
+        <a href="{% url 'logout' %}" style="text-decoration: none;color: black; padding-right: 20px; font-weight: 600;">Cerrar Sesión</a>
+      </li>
+      <li style="list-style: none;">
+        <button class="account_button"><a href="{% url 'profile' %}" style="text-decoration: none;"><img src="{% static 'app/icons/icons8-user-24.png' %}" style="padding-bottom: 5px;" alt=""></a></button></div>
+        
+      </li>
+      {% else %}
+      <li style="list-style: none;">
+        <a href="{% url 'login' %}" style="text-decoration: none;color: black; padding-right: 20px;font-weight: 600;">Iniciar Sesión</a>
+      </li>
+      <li style="list-style: none;">
+        <a href="{% url 'registroUsuario'%}"  style="text-decoration: none;color: black;font-weight: 600;">Registrarte</a>
+      </li>
+      {% endif %}
+    </nav>
+         
+  </section>
+
+
+  <div class="contenedor_pag_principal">
+
+   
+    
+    {% block contenido %}
+    {% endblock %}
+
+  </div>
+
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  {% if messages %}
+   {% for m in messages %}
+     <script>
+       Swal.fire({
+        "text": "{{m}}",
+        "icon": "success"
+       })
+     </script>
+   {% endfor %}
+  {% endif%}
+
+
+  {% block js %}
+
+  {% endblock %}
+
+</body>
+</html>

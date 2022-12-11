@@ -1,0 +1,252 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.body_HC{
+    background-color: #b7eeea;
+}
+
+
+/*///////////navbar///////////////////*/
+.logo{
+    width: 100px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.container-fluid .navbar{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.container-fluid .navbar .d-flex{
+    margin-right: 20px;
+}
+.container-fluid .navbar .d-flex input{
+    height: 30px;
+    width: 300px;
+    align-self: center;
+
+}
+.button_search{
+    border: 1px solid #298e5f;
+    border-radius: 8px;
+    background-color: transparent;
+    width: 40px;
+    height: 40px;
+    padding-top: 1px;
+    padding-bottom: 2px;
+}
+.button_search:hover{
+   box-shadow:  4px 4px 15px #61927b,
+             -4px -4px 15px #b5ffe5;
+}
+.button_search:active{
+    border: none;
+    background: #c3e6d5;
+    box-shadow: inset 8px 8px 25px #9ac2af,
+                inset -8px -8px 25px #eaeeec;
+}
+
+ 
+
+.account{
+    display: flex;
+    justify-content: center;
+    justify-content: flex-end;
+    align-items: center;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+.account_button{ 
+    width: 40px;
+    height: 40px;
+    border: 2px solid #298e5f;
+    border-radius: 150px;
+    font-size: 20px;
+    color: #298e5f;
+    font-weight: bold;
+}
+.account_button:hover{ 
+    box-shadow:  4px 4px 15px #61927b,
+             -4px -4px 15px #b5ffe5;
+}
+.account_button:active{ 
+    border: none;
+    background: #c3e6d5;
+    box-shadow: inset 8px 8px 25px #9ac2af,
+                inset -8px -8px 25px #eaeeec;
+}
+
+
+
+/*///////////////////////////CREAR HISTORIA CLINICA/////////////////////////////*/
+.tittle{
+    display: flex;
+    justify-content: center;
+}
+.no_HC{
+    margin-top: 30px;
+}
+form{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.form-row{
+    margin-top: 20px;
+    margin-left: 200px;
+}
+.form-row1{
+    width: 500px;
+    margin-top: 20px;
+    margin-left: 50px;
+}
+.flex_input{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+
+#validationName{
+    border: 1px solid hsl(152, 34%, 58%);
+    border-radius: 10px;
+    width: 500px;
+}
+#validationName:hover{
+    border: 2px solid hsl(152, 55%, 36%);
+    box-shadow: gray 2px 2px 2px ;
+}
+
+#validationLastName{
+    border: 1px solid hsl(152, 34%, 58%);
+    border-radius: 10px;
+    width: 500px;
+}
+#validationLastName:hover{
+    border: 2px solid hsl(152, 55%, 36%);
+    box-shadow: gray 2px 2px 2px ;
+}
+
+
+#validationCI{
+    border: 1px solid hsl(152, 34%, 58%);
+    border-radius: 10px;
+    width: 500px;
+}
+#validationCI:hover{
+    border: 2px solid hsl(152, 55%, 36%);
+    box-shadow: gray 2px 2px 2px ;
+}
+
+
+.flex_input #validationAge{
+    border: 1px solid hsl(152, 34%, 58%);
+    border-radius: 10px;
+    margin-left: 0;
+    width: 100px;
+}
+#validationAge.form-control.input2{
+    margin-left: 20px;
+}
+#validationAge:hover{
+    border: 2px solid hsl(152, 55%, 36%);
+    box-shadow: gray 2px 2px 2px ;
+}
+
+
+.flex_input #validationSex{
+    border: 1px solid hsl(152, 34%, 58%);
+    border-radius: 10px;
+    margin-left: 0;
+    width: 100px;
+}
+#validationSex.form-control.input2{
+    margin-left: 20px;
+}
+#validationSex:hover{
+    border: 2px solid hsl(152, 55%, 36%);
+    box-shadow: gray 2px 2px 2px ;
+}
+.label_sex{
+    margin-left: 25px;
+}
+label{
+    font-size: 20px;
+}
+
+
+#validationPhone{
+    border: 1px solid hsl(152, 34%, 58%);
+    border-radius: 10px;
+    width: 500px;
+}
+#validationPhone:hover{
+    border: 2px solid hsl(152, 55%, 36%);
+    box-shadow: gray 2px 2px 2px ;
+}
+
+
+#validationDirection{
+    border: 1px solid hsl(152, 34%, 58%);
+    border-radius: 10px;
+    width: 500px;
+}
+#validationDirection:hover{
+    border: 2px solid hsl(152, 55%, 36%);
+    box-shadow: gray 2px 2px 2px ;
+}
+
+
+#validationMedicalHistorial{
+    border: 1px solid hsl(152, 34%, 58%);
+    border-radius: 20px;
+    width: 500px;
+    height: 400px;
+}
+#validationMedicalHistorial:hover{
+    border: 2px solid hsl(152, 55%, 36%);
+    box-shadow: gray 2px 2px 2px ;
+}
+
+
+.form-row1 button{
+    height: 50px;
+    margin-top: 50px;
+    margin-left: 50px;
+}
+.botones{
+    display: flex;
+    justify-content: end;
+}
+.botones .btn_primary{
+    margin-top: 25px;
+    width: 100px;
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: white;
+    border: 2px solid hsl(152, 55%, 36%);
+    border-radius: 8px;
+    box-shadow: grey 3px 3px 3px;
+}
+.botones .btn_primary:hover{
+    color: white;
+    background-color:hsl(152, 55%, 36%);
+    border: 2px solid hsl(152, 55%, 36%);
+}
+.botones .btn_secundary{
+    margin-top: 25px;
+    width: 100px;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: hsl(152, 55%, 36%);
+    border: 2px solid hsl(152, 55%, 36%);
+    border-radius: 8px;
+    box-shadow: grey 3px 3px 3px;
+}
+.botones .btn_secundary:hover{
+    background-color: hsl(152, 59%, 28%);
+    border: 2px solid hsl(152, 59%, 28%);
+}
